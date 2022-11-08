@@ -1,5 +1,7 @@
 from kafka import KafkaConsumer
 from json import loads
+import os
+import json
 
 
 data_stream_consumer = KafkaConsumer(
@@ -10,4 +12,7 @@ data_stream_consumer = KafkaConsumer(
 data_stream_consumer.subscribe(topics=["aicore_topic"])
 
 for message in data_stream_consumer:
-    print(message)
+    os.chdir("/home/awoyelu12/GitHub/pinterest-data-processing-pipeline")
+    os.chdir(os.getcwd () + '/batch_data')
+    with open(os.getcwd () + '/data.json','w') as f:
+        json.dump(message,f)
