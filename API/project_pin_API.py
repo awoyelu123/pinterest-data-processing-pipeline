@@ -21,10 +21,17 @@ class Data(BaseModel):
     downloaded: int
     save_location: str
 
+producer = KafkaProducer(
+    bootstrap_servers="localhost:9092",
+    client_id="Pintrest data producer",
+    value_serializer=lambda pintrestmessage: dumps(pintrestmessage).encode("ascii"))
+
+
 
 @app.post("/pin/")
 def get_db_row(item: Data):
     data = dict(item)
+    producer.send("aicore_topic",data)
     return item
 
 
