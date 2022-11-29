@@ -1,6 +1,6 @@
 # pinterest-data-processing-pipeline
 
-## Project Overview
+# 1. Project Overview
 
 As the system overview diagram shown below, this project developed an end-to-end data processing pipeline in Python based on Pinterests experiment processing pipeline.It is implemented based on Lambda architecture to take advantage of both batch and stream-processing.
 
