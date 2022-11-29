@@ -6,3 +6,10 @@ As the system overview diagram shown below, this project developed an end-to-end
 
 Firstly, Creating an API and using Kafka to distribute the data between S3 and Spark streaming.
 
+# 2. Data Ingestion
+## 2.1 Configuring the API
+
+To emulate the live environment, the project design an API listening for events made by users on the app, or developer requests to the API. In the mean time, a user emulations script was created to simulate users uploading data to Pinterest.
+
+
+
